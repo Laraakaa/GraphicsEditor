@@ -15,6 +15,11 @@ public class Kreis extends Figur {
         this.radius = Math.round(factor * radius);
     }
 
+    @Override
+    public void draw(Graphics2D g2d) {
+        g2d.drawOval(this.getX(), this.getY(), this.getRadius(), this.getRadius());
+    }
+
     public void setRadius(int radius) {
         this.radius = radius;
     }

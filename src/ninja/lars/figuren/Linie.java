@@ -20,6 +20,17 @@ public class Linie extends Figur {
         this.endeY = endeY + deltaY;
     }
 
+    @Override
+    public void stretch(float factor) {
+        this.endeX = Math.round(this.endeX * factor);
+        this.endeY = Math.round(this.endeY * factor);
+    }
+
+    @Override
+    public void draw(Graphics2D g2d) {
+        g2d.drawLine(this.getX(), this.getY(), this.getEndeX(), this.getEndeY());
+    }
+
     public int getEndeX() {
         return endeX;
     }

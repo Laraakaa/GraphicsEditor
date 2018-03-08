@@ -46,8 +46,6 @@ public class FigureSaver {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        //writer.write(output);
     }
 
 }

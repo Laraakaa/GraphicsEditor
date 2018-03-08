@@ -1,10 +1,8 @@
 package ninja.lars;
 
-import ninja.lars.figuren.*;
+import ninja.lars.figuren.Zeichnung;
 import ninja.lars.persistence.FigureLoader;
-import ninja.lars.persistence.FigureSaver;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class Main {
@@ -17,7 +15,7 @@ public class Main {
         Linie linie = new Linie(0, 0, Color.BLACK, 500, 500);
         Ellipse ellipse = new Ellipse(300, 300, Color.CYAN, 200, 100);
 
-        Gruppe gruppe = new Gruppe();
+        Zeichnung gruppe = new Zeichnung();
         gruppe.add(kreis);
         gruppe.add(rechteck);
 
@@ -49,7 +47,8 @@ public class Main {
 
         try {
             FigureLoader loader = new FigureLoader("data.csv");
-            display.setFiguren(loader.read());
+            Zeichnung z = new Zeichnung(loader.read());
+            display.setZeichnung(z);
             display.repaint();
         } catch (IOException e) {
             e.printStackTrace();

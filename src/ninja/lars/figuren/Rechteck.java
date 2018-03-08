@@ -19,6 +19,11 @@ public class Rechteck extends Figur {
         this.hoehe = Math.round(factor * hoehe);
     }
 
+    @Override
+    public void draw(Graphics2D g2d) {
+        g2d.drawRect(this.getX(), this.getY(), this.getBreite(), this.getHoehe());
+    }
+
     public int getBreite() {
         return breite;
     }

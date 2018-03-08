@@ -2,7 +2,7 @@ package ninja.lars.figuren;
 
 import java.awt.*;
 
-public class Figur {
+public abstract class Figur {
     private int x;
     private int y;
     private Color lineColor;
@@ -18,8 +18,9 @@ public class Figur {
         this.y = y + deltaY;
     }
 
-    public void stretch(float factor) {
-    }
+    public abstract void stretch(float factor);
+
+    public abstract void draw(Graphics2D g2d);
 
     public int getX() {
         return x;
