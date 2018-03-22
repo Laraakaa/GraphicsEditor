@@ -3,12 +3,14 @@ package ninja.lars;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-final class EditorFrame extends JFrame implements MouseListener {
+final class EditorFrame extends JFrame implements MouseListener, KeyListener {
   private EditorControl editorControl = new EditorControl();
   
   EditorFrame(int breite, int hoehe) {
@@ -17,6 +19,7 @@ final class EditorFrame extends JFrame implements MouseListener {
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setVisible(true);
     addMouseListener(this);
+    addKeyListener(this);
   }
 
   private void erzeugeUndSetzeEditorPanel() {
@@ -62,5 +65,20 @@ final class EditorFrame extends JFrame implements MouseListener {
 
   public EditorControl getEditorControl() {
     return editorControl;
+  }
+
+  @Override
+  public void keyTyped(KeyEvent e) {
+    editorControl.setFigurTyp(e.getKeyChar());
+  }
+
+  @Override
+  public void keyPressed(KeyEvent e) {
+
+  }
+
+  @Override
+  public void keyReleased(KeyEvent e) {
+
   }
 }

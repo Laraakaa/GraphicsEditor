@@ -7,7 +7,6 @@ public final class Grafikeditor {
   }
 
   private Grafikeditor() {
-    @SuppressWarnings("unused")
     EditorFrame frame = new EditorFrame(800, 600);
   }
 }

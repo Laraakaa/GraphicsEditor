@@ -13,7 +13,6 @@ import javax.swing.*;
  *
  * @author Andres Scheidegger
  */
-@SuppressWarnings("serial")
 public class Display extends JFrame {
     /** Die Darzustellende Zeichnung */
     private Zeichnung zeichnung = new Zeichnung();
