@@ -1,13 +1,8 @@
 package ninja.lars;
 
-import ninja.lars.figuren.Zeichnung;
-import ninja.lars.persistence.FigureLoader;
-
-import java.io.IOException;
-
 public class Main {
 
-    private static final Display  display = new Display();
+    private static final EditorFrame display = new EditorFrame(500, 500);
 
     public static void main(String[] args) {
 	    /* Kreis kreis = new Kreis(10, 10, Color.GREEN, 100);
@@ -45,13 +40,15 @@ public class Main {
             e.printStackTrace();
         } */
 
-        try {
+        /* try {
             FigureLoader loader = new FigureLoader("data.csv");
             Zeichnung z = new Zeichnung(loader.read());
-            display.setZeichnung(z);
-            display.repaint();
+            //display.getEditorControl().setZeichnung(z);
+            //display.repaint();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+
+        //display.getEditorControl();
     }
 }
